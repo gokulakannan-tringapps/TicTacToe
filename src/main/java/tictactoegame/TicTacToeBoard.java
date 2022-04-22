@@ -3,8 +3,9 @@ import java.util.*;
 
 public class TicTacToeBoard {
 	String input;
-	int count_x,count_o;
-	int pos[]=new int[9];
+	int count_x;
+	int count_o;
+	int[] pos=new int[9];
 	
 public TicTacToeBoard(String board) {
    input=board.toLowerCase();
