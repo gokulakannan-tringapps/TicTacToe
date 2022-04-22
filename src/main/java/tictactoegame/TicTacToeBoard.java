@@ -3,14 +3,14 @@ import java.util.*;
 
 public class TicTacToeBoard {
 	String input;
-	int count_x;
-	int count_o;
+	int countx;
+	int counto;
 	int[] pos=new int[9];
 	
 public TicTacToeBoard(String board) {
    input=board.toLowerCase();
-    count_x=0;
-    count_o=0;
+    countx=0;
+    counto=0;
 }
 
 
@@ -27,16 +27,16 @@ public Evaluation evaluate() {
       }
 	  else if(input.charAt(i)=='x')
 	  {
-		  count_x++;//counting no of x's
+		  countx++;//counting no of x's
 		  pos[i]=1;//setting array position for x as 1
 	  }
 	  else
 	  {
-		  count_o++;// counting no of o's
+		  counto++;// counting no of o's
 		  pos[i]=0;//setting array position for o as 0
 	  }
   }
-  if(Math.abs(count_x-count_o) >=2)//comparing inputs
+  if(Math.abs(countx-counto) >=2)//comparing inputs
   {
 	  System.out.println("Someone has cheated");
 	  return Evaluation.UnreachableState;
