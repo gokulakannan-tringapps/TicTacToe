@@ -15,10 +15,7 @@ public TicTacToeBoard(String board) {
 
 
 public Evaluation evaluate() {
-  if(input.length()!=9 )
-  {
-	  return Evaluation.InvalidInput;
-  }
+  
   for(int i=0;i<input.length();i++)
   {
       
@@ -65,6 +62,10 @@ public static void main(String[] args)
 	  Scanner sc=new Scanner(System.in);
 	  System.out.println("Enter your input combinations...");
 	  String str=sc.next();
+	if(str.length()!=9 )
+  	{
+	   System.out.println(Evaluation.InvalidInput);
+  	}
 	  TicTacToeBoard t=new TicTacToeBoard(str);//passing input to constructor
 	  System.out.print(t.evaluate());
 }
