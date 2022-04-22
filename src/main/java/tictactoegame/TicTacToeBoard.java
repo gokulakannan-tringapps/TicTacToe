@@ -21,20 +21,21 @@ public Evaluation evaluate() {
   }
   for(int i=0;i<input.length();i++)
   {
-      if(input.charAt(i)!='x' && input.charAt(i)!='o')
-      {
-    	  return Evaluation.InvalidInput;  
-      }
-	  else if(input.charAt(i)=='x')
+      
+	  if(input.charAt(i)=='x')
 	  {
 		  countx++;//counting no of x's
 		  pos[i]=1;//setting array position for x as 1
 	  }
-	  else
+	  else if(input.charAt(i)=='o')
 	  {
 		  counto++;// counting no of o's
 		  pos[i]=0;//setting array position for o as 0
 	  }
+	  else 
+      	  {
+    	  return Evaluation.InvalidInput;  
+          }
   }
   if(Math.abs(countx-counto) >=2)//comparing inputs
   {
